@@ -1,13 +1,6 @@
-
 #!/bin/bash
+# start.sh - Initialization script for the Docker container
 
-echo "Starting container setup..."
-echo "Operating System Info:"
-cat /etc/os-release
-
-echo ""
-echo "Running a bash command: Listing contents of the current directory (/app):"
-ls -la
-
-echo ""
-echo "Container task completed successfully!"
+echo "Starting Nginx web server..."
+# Start Nginx in the foreground so the container doesn't exit immediately
+exec nginx -g 'daemon off;'
